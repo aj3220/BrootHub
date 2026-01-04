@@ -1,0 +1,14 @@
+{{ define "main" }}
+{{ partial "styles.html" . }}
+
+<div class="home-container">
+  <div class="home-box">
+
+      <h1 class="home-headline">{{ .Title }}</h1>
+      <div class="home-content">
+        {{ .Content }}
+      </div>
+  </div>
+</div>
+
+{{ end }}

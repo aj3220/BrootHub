@@ -1,0 +1,22 @@
+<div style="text-align:center; margin:1rem 0;">
+    <button id="btn-{{ .Ordinal }}"
+        style="border:2px solid #000;background:#fff;color:#000;padding:0.5rem 1rem;border-radius:6px;font-size:0.9rem;cursor:pointer;">
+        {{ .Get 0 }}
+    </button>
+</div>
+
+<div id="content-{{ .Ordinal }}"></div>
+
+<script>
+    (function () {
+        var btn = document.getElementById("btn-{{ .Ordinal }}");
+        var container = document.getElementById("content-{{ .Ordinal }}");
+        var iframeHTML = {{ .Inner | jsonify | safeJS
+    }}; // safely convert iframe to JS string
+
+    btn.addEventListener("click", function () {
+        container.innerHTML = iframeHTML; // iframe created dynamically
+        btn.style.display = "none";       // hide button
+    });
+  }) ();
+</script>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    {{ partial "meta.html" . }}
+    <link rel="stylesheet" href="{{ "css/main.css" | relURL }}">
+
+    {{ partial "styles.html" . }}
+
+</head>
+
+<body>
+    {{ partial "objects.html" . }}
+	
+    <div id="page-content">
+        {{ partial "scripts.html" . }}
+        <main>
+            {{ block "main" . }}{{ end }}
+        </main>
+        {{ partial "footer.html" . }}
+    </div>
+</body>
+        {{ partial "outofbody.html" . }}
+</html>

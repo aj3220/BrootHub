@@ -1,0 +1,16 @@
+{{ define "main" }}
+{{ partial "styles.html" . }}
+
+
+<div class="article-container">
+  <div class="article-box">
+    <h1 class="article-title">{{ .Title }}</h1>
+    {{ with .Params.date }}
+    <p class="article-date">{{ . | time.Format "02.01.2006" }}</p>
+
+    {{ end }} <div class="article-content">
+      {{ .Content }}
+    </div>
+  </div>
+</div>
+{{ end }}

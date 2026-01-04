@@ -1,0 +1,18 @@
+{{ partial "styles.html" . }}
+<center>
+  <div class="list-layout">
+</center>
+{{ range site.Params.HomeArticles }}
+{{ with site.GetPage "page" . }}
+<div class="content-box">
+  {{ with .Params.image }}
+  <img src="{{ . }}" alt="{{ $.Title }}" style="max-width: 100%; border-radius: 8px; margin-bottom: 10px;">
+  {{ end }}
+  <h2 class="text-xl font-semibold mb-2">
+    <a href="{{ .RelPermalink }}" class="text-blue-600 hover:underline" tabindex="0">{{ .Title }}</a>
+  </h2>
+  <p class="text-gray-700">{{ .Summary | truncate 100 }}</p>
+</div>
+{{ end }}<p></p>
+{{ end }}
+</div>

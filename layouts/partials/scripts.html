@@ -1,0 +1,101 @@
+<script>
+    function toggleMenu() {
+        const menu = document.querySelector(".nav-menu-container");
+        const overlay = document.querySelector(".overlay");
+        const btn = document.querySelector('.burger-menu');
+        const page = document.getElementById("page-content");
+
+        const isOpen = menu.classList.toggle("active");
+        overlay.style.display = isOpen ? "block" : "none";
+
+        btn.setAttribute("aria-expanded", isOpen);
+
+        // Make all links in burger menu indexable and lock
+        menu.querySelectorAll('a, button').forEach(el => {
+            el.setAttribute('tabindex', isOpen ? '0' : '-1');
+        });
+
+        if (isOpen) {
+            document.body.style.overflow = "hidden"; // Background scroll disabled
+            page.setAttribute("inert", "");
+            const firstLink = menu.querySelector("a, button");
+            if (firstLink) firstLink.focus();
+        } else {
+            page.removeAttribute("inert");
+            btn.focus();
+            document.body.style.overflow = ""; // Reset scroll
+        }
+    }
+
+
+    document.querySelectorAll('.burger-menu').forEach(el => {
+        el.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();   // prevent scroll on space
+                toggleMenu();
+            }
+        });
+    });
+
+    window.onload = function () {
+        if (localStorage.getItem("darkMode") === "enabled") {
+            document.body.classList.add("dark-mode");
+            document.getElementById("darkModeToggle").textContent = "☀️";
+        }
+    };
+
+    document.getElementById("darkModeToggle").addEventListener("click", function () {
+        // Toggle dark mode
+        const isDark = document.body.classList.toggle("dark-mode");
+
+        // ARIA-Status for Screenreader 
+        this.setAttribute("aria-pressed", isDark);
+
+        // Button-Symbol changes
+        this.textContent = isDark ? "☀️" : "🌙";
+
+        // Save status in localStorage 
+        const mode = isDark ? "enabled" : "disabled";
+        localStorage.setItem("darkMode", mode);
+    });
+
+    window.onscroll = function () {
+        const scrollTopBtn = document.getElementById("scrollTopBtn");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            scrollTopBtn.classList.add("visible");
+            scrollTopBtn.setAttribute("tabindex", "99");
+        } else {
+            scrollTopBtn.classList.remove("visible");
+            scrollTopBtn.setAttribute("tabindex", "-1");
+        }
+    };
+
+    function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        document.getElementById("ariaLive").textContent = "button click";
+    }
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".has-submenu > a").forEach(item => {
+            item.addEventListener("click", function (event) {
+                event.preventDefault();
+                let submenu = this.nextElementSibling;
+                let isActive = submenu.style.display === "block";
+                document.querySelectorAll(".submenu").forEach(menu => menu.style.display = "none");
+                document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("active"));
+                if (!isActive) {
+                    submenu.style.display = "block";
+                    this.parentElement.classList.add("active");
+                }
+            });
+        });
+
+        document.addEventListener("click", function (event) {
+            if (!event.target.closest(".has-submenu")) {
+                document.querySelectorAll(".submenu").forEach(menu => menu.style.display = "none");
+                document.querySelectorAll(".has-submenu").forEach(item => item.classList.remove("active"));
+            }
+        });
+    });
+</script>

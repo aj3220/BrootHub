@@ -1,0 +1,172 @@
+# Base configuration
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "DEMO"
+theme = "BrootHub"
+themesDir = "../../"
+enableRobotsTXT = true
+
+# Disable these kinds (taxonomy pages, terms)
+disableKinds = ["taxonomy", "term"]
+
+# Goldmark Markdown settings
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      # Allow raw HTML in Markdown
+      unsafe = true
+
+# Parameters for theme-specific functionality
+[params]
+  favicon = "/icon_demo.png"
+  description = "Demo Page"
+  LogoText = "NAME/LOGO" # Text logo; use LogoPicture instead if you want an image
+  # LogoPicture = "/icon_demo.png" # Optional: if defined, this takes precedence over LogoText
+  # HomeArticles: list of pages used in prebuilt shortcodes to display featured content on homepage
+  HomeArticles = ["thank-you", "placeholder", "posts/post2"]
+
+  [params.opengraph]
+    enabled = true # Enable OpenGraph metadata
+
+  [params.seo]
+    enabled = false # Very basic SEO functionality, can be enabled
+
+
+  [params.Legal]
+    # Main legal/club/association info
+    headline = "Musterverein e.V."
+    address1 = "Max Mustermann"
+    address2 = "Musterstraße 1"
+    address3 = "12345 Musterstadt"
+    address4 = "Musterland"
+    address5 = "" # Empty lines are ignored
+    address6 = ""
+    address7 = ""
+    phone = "+49 123 xxxxxx"
+    mail = "kontakt@example.invalid"
+    alternative_website = "https://example.invalid"
+    entity_headline = "Vereinsinformationen" # Name of entity, e.g., club or company
+    entity_details1 = "Rechtliche Informationen:" # Additional entity details
+    entity_details2 = "Beispiel: Vereinsregister + Registernummer"
+    entity_details3 = ""
+    entity_details4 = ""
+    entity_details5 = ""
+    entity_details6 = ""
+    entity_details7 = ""
+    bank_details1 = "Bank: Musterbank"
+    bank_details2 = "Hier könnten weitere Informationen stehen."
+    bank_details3 = ""
+    bank_details4 = ""
+    bank_details5 = ""
+    bank_details6 = ""
+    bank_details7 = ""
+
+  [params.MainMenu]
+    [[params.MainMenu.items]]
+      name = "Home"
+      url = "/"
+
+    [[params.MainMenu.items]]
+      name = "FAQ"
+      url = ""
+      # Submenu items under FAQ
+      [[params.MainMenu.items.submenu]]
+        name = "Frage 1?"
+        url = "/placeholder"
+      [[params.MainMenu.items.submenu]]
+        name = "Frage 2?"
+        url = "/placeholder"
+      [[params.MainMenu.items.submenu]]
+        name = "Frage 3?"
+        url = "/placeholder"
+      [[params.MainMenu.items.submenu]]
+        name = "Thank You!"
+        url = "/thank-you"
+
+    [[params.MainMenu.items]]
+      name = "About-Us"
+      url = "/placeholder"
+
+    [[params.MainMenu.items]]
+      name = "Kontakt"
+      url = "/placeholder"
+
+  [params.Footer]
+    CopyrightExtraLine = "©2025 Musterverein e.V. - Inhalte"
+    FooterMenuEnabled = true # Enable footer menu
+    FooterSocialMediaActivation = true # Enable social media section
+    FooterSocialMediaHeadline = "Dieser Bereich stellt ihr Social Media vor:"
+
+    # Predefined legal links in footer
+    [[params.Footer.FooterLegalEntities]]
+      name = "Impressum"
+      url = "/impressum"
+    [[params.Footer.FooterLegalEntities]]
+      name = "Allgemeine Geschaeftsbedingungen"
+      url = "/agb"
+    [[params.Footer.FooterLegalEntities]]
+      name = "Datenschutz"
+      url = "/datenschutz"
+
+    # Social media links
+    [[params.Footer.SocialMedia]]
+      name = "FACEBOOK"
+      url = "/placeholder"
+    [[params.Footer.SocialMedia]]
+      name = "INSTAGRAM"
+      url = "/placeholder"
+
+    # New footer menus grouped by category
+    [[params.Footer.FooterMenus]]
+      category = "Kategorie 1"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 1 - Eintrag 1"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 1 - Eintrag 2"
+        url = "/placeholder"
+
+    [[params.Footer.FooterMenus]]
+      category = "Kategorie 2"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 2 - Eintrag 1"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 2 - Eintrag 2"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 2 - Eintrag 3"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 2 - Eintrag 4"
+        url = "/placeholder"
+
+    [[params.Footer.FooterMenus]]
+      category = "Kategorie 3"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 3 - Eintrag 1"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 3 - Eintrag 2"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 3 - Eintrag 3"
+        url = "/placeholder"
+
+    [[params.Footer.FooterMenus]]
+      category = "Kategorie 4"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 4 - Eintrag 1"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 4 - Eintrag 2"
+        url = "/placeholder"
+
+    [[params.Footer.FooterMenus]]
+      category = "Kategorie 5"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 5 - Eintrag 1"
+        url = "/placeholder"
+      [[params.Footer.FooterMenus.items]]
+        name = "Kategorie 5 - Eintrag 2"
+        url = "/placeholder"

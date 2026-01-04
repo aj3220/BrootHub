@@ -1,0 +1,35 @@
+@import url("00-vars.css");
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: var(--dark-background-color);
+    color: var(--dark-text-color);
+}
+
+/* Logo-Text */
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Dark Mode Logo-Text */
+.dark-mode .logo-text {
+    color: var(--dark-text-color);
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}

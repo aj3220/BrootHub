@@ -1,0 +1,77 @@
+{{ with .Site.Params.Legal }}
+<h3>Kontaktinformationen:</h3>
+  <!-- Headline -->
+  {{ with .headline }}
+    <p>
+      <strong>{{ . }}</strong>
+    </p>
+  {{ end }}
+
+  <!-- Adresse -->
+  {{ if or .address1 .address2 .address3 .address4 .address5 .address6 .address7 }}
+    <p>
+      <strong>Adresse:</strong><br>
+      {{ with .address1 }}{{ . }}<br>{{ end }}
+      {{ with .address2 }}{{ . }}<br>{{ end }}
+      {{ with .address3 }}{{ . }}<br>{{ end }}
+      {{ with .address4 }}{{ . }}<br>{{ end }}
+      {{ with .address5 }}{{ . }}<br>{{ end }}
+      {{ with .address6 }}{{ . }}<br>{{ end }}
+      {{ with .address7 }}{{ . }}<br>{{ end }}
+    </p>
+  {{ end }}
+
+  <!-- Kontakt -->
+  {{ if or .phone .mail .alternative_website }}
+    <p>
+      {{ with .phone }}
+        <strong>Telefon:</strong>
+        <a href="tel:{{ . | replaceRE `[^0-9+]` `` }}">{{ . }}</a><br>
+      {{ end }}
+
+      {{ with .mail }}
+        <strong>E-Mail:</strong>
+        <a href="mailto:{{ . }}">{{ . }}</a><br>
+      {{ end }}
+
+      {{ with .alternative_website }}
+        <strong>Website:</strong>
+        <a href="{{ . }}" rel="noopener noreferrer">{{ . }}</a>
+      {{ end }}
+    </p>
+  {{ end }}
+
+  <!-- Rechtliche Angaben / Entity -->
+  {{ if or .entity_headline .entity_details1 .entity_details2 .entity_details3 .entity_details4 .entity_details5 .entity_details6 .entity_details7 }}
+    <p>
+      {{ with .entity_headline }}
+        <strong>{{ . }}:</strong><br>
+      {{ end }}
+
+      {{ with .entity_details1 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details2 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details3 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details4 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details5 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details6 }}{{ . }}<br>{{ end }}
+      {{ with .entity_details7 }}{{ . }}<br>{{ end }}
+    </p>
+  {{ end }}
+
+  <!-- Bankverbindung -->
+  {{ if or .bank_details1 .bank_details2 .bank_details3 .bank_details4 .bank_details5 .bank_details6 .bank_details7 }}
+    <p>
+      <strong>Bankinformationen:</strong><br>
+      {{ with .bank_details1 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details2 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details3 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details4 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details5 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details6 }}{{ . }}<br>{{ end }}
+      {{ with .bank_details7 }}{{ . }}<br>{{ end }}
+    </p>
+  {{ end }}
+
+{{ end }}
+
+<hr>

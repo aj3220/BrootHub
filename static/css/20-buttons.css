@@ -1,0 +1,42 @@
+@import url("00-vars.css");
+
+#scrollTopBtn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--button-background-color);
+    color: var(--button-default-color);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 1002;
+}
+
+#scrollTopBtn.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#scrollTopBtn:hover {
+    background-color: var(--button-hover-color);
+}
+
+/* Dark Mode Toggle */
+#darkModeToggle {
+    margin-left: 10px;
+    background-color: transparent;
+    border: 2px solid var(--text-color);
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.dark-mode #darkModeToggle {
+    border-color: var(--background-color);
+}
