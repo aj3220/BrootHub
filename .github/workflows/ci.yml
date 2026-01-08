@@ -3,7 +3,7 @@ name: Demo Page
 on:
   workflow_dispatch:
   push:
-    branches: [ "main", "cicd-integration" ]
+    branches: [ "master", "cicd-integration" ]
 
 permissions:
   contents: write
@@ -17,7 +17,7 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    needs: [check]
+#    needs: [check]
 
     steps:
       - uses: actions/checkout@v4
