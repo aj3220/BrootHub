@@ -1,5 +1,5 @@
 # Base configuration
-baseURL = "https://localhost/testemich"
+baseURL = "https://localhost/BrootHub"
 relativeURLs = true
 canonifyURLs = true
 languageCode = "en-us"
