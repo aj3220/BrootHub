@@ -1,3 +1,8 @@
+{{/*  Usage: 
+	{{< button_load-external-iframe "Load external elements" >}}
+	<iframe aria-label='aria-label' src='https://example.invalid//form/'></iframe>
+	{{< /button_load-external-iframe >}} 
+*/}}
 <!-- ===== iframe Overlay Shortcode ===== -->
 <button class="iframe-full-overlay-btn" data-url="{{ .Get "url" }}">
     {{ .Get "button_title" }}
